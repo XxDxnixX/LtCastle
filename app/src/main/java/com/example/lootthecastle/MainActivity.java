@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (stage == 2){
                     counterint ++;  // Max. bis ca. 2* 10^9
                     countdown.setText("" + counterint);
-
+// original Thanos
                 }
 
             }
