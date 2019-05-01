@@ -43,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent1);
                     break;
                 case R.id.navigation_settings:
+                    Intent intent2 = new Intent(MainActivity.this, SettingsActivity.class);
+                    startActivity(intent2);
                     break;
+
             }
             return false;
         }
@@ -96,10 +99,9 @@ public class MainActivity extends AppCompatActivity {
                 Values.click_amt++;
 
                 if (Values.stage_lvl == 0) {
-                    countdown.setText("" + countdownint);
+                    countdown.setText("" + (countdownint));
                     countdownint--;
                     updateSchildButton();
-
 
                 }
 
@@ -130,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         refreshGoldandElexir();
+        updateSchildButton();
     }
 
     @Override
@@ -160,6 +163,8 @@ public class MainActivity extends AppCompatActivity {
                 int i = (countdownint * 100 / schildlebenholz);
 
                 if(i > 75) {
+                    elixirimage.setVisibility(View.INVISIBLE);
+                    cpstext.setVisibility(View.INVISIBLE);
                     schildbtn.setImageDrawable(getResources().getDrawable(R.drawable.schildholz0));
                 }
                 if (i <= 75 && i > 50) {
@@ -259,6 +264,8 @@ public class MainActivity extends AppCompatActivity {
         }
         refreshGoldandElexir();
     }
+
+
 
     /**Updaten der Counter*/
     private void updateCounter() {

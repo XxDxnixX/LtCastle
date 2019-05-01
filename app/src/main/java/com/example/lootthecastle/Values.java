@@ -43,4 +43,19 @@ public class Values {
             dh.replace("stage_lvl", stage_lvl);
         }
     }
+    public static void resetData(Context context){
+        DatabaseHelper dh = new DatabaseHelper(context);
+
+        dh.replace("axt_kr", 0);
+        dh.replace("schwert_kr", 0);
+        dh.replace("schild_kr", 0);
+        dh.replace("bogen_kr", 0);
+        dh.replace("streitkolben_kr", 0);
+        dh.replace("elixir_amt", 0);
+        dh.replace("gold_amt", 0);
+        dh.replace("click_amt", 0);
+        dh.replace("stage_lvl", 0);
+        Values.getValues(context);
+
+    }
 }
